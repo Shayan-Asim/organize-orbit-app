@@ -28,6 +28,7 @@ function StudyPlanner() {
   useEffect(()=>{
     try { const raw=localStorage.getItem('study-planner-v1'); if(raw){ const data=JSON.parse(raw); if(Array.isArray(data.tasks) && data.tasks.every((t:Task)=>typeof t.title==='string' && typeof t.id==='string' && subjects.includes(t.subject) && priorities.includes(t.priority)))setTasks(data.tasks);else setTasks(seedTasks());setGoal(Number(data.goal)>0?Math.min(50,Number(data.goal)):5);setDays(Array.isArray(data.days)?data.days:[]);setSessions(Number(data.sessions)||0); }else {setTasks(seedTasks());setDays([dayKey()]);}setTheme(localStorage.getItem('study-planner-theme')==='dark'?'dark':'light'); } catch{setTasks(seedTasks());}
     setNow(new Date());setQuote(quotes[Math.floor(Math.random()*quotes.length)]);setLoaded(true);
+    getAIQuote().then(r=>{if(r.quote)setQuote(r.quote);}).catch(()=>{});
     const id=window.setInterval(()=>setNow(new Date()),1000);return()=>window.clearInterval(id);
   },[]);
   useEffect(()=>{if(!loaded)return;try{localStorage.setItem('study-planner-v1',JSON.stringify({tasks,goal,days,sessions}));}catch{setNotice('Your browser storage is full. Export your tasks to keep a copy.');}},[tasks,goal,days,sessions,loaded]);
