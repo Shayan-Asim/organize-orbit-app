@@ -1,6 +1,6 @@
 export type Subject = 'Programming' | 'Mathematics' | 'Science' | 'English' | 'Other';
 export type Priority = 'High' | 'Medium' | 'Low';
-export type Task = { id: string; title: string; subject: Subject; priority: Priority; due: string; notes: string; created: string; completed: boolean; completedAt?: string };
+export type Task = { id: string; title: string; subject: Subject; priority: Priority; due: string; notes: string; created: string; completed: boolean; completedAt?: string | undefined };
 export const subjects: Subject[] = ['Programming', 'Mathematics', 'Science', 'English', 'Other'];
 export const priorities: Priority[] = ['High', 'Medium', 'Low'];
 export function dayKey(date = new Date()) { return `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`; }
