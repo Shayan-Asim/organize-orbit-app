@@ -200,3 +200,7 @@ button, input,select,textarea {font:inherit;}
 .mobile-theme {display:none;}
 .dark .banner-note {color:var(--foreground);}
 @media(max-width:700px){.mobile-theme {display:inline-flex;}}
+
+/* Small screens: keep the live date & time visible and the top nav opaque */
+@media(max-width:900px){.date-block{display:block;}}
+@media(max-width:700px){.sidebar{background:var(--background);backdrop-filter:blur(12px);}.welcome-row{grid-template-columns:1fr;}.date-block{text-align:left;display:flex;gap:10px;align-items:center;flex-wrap:wrap;}.date-block strong{margin-top:0;color:var(--foreground);}}
