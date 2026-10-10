@@ -3,7 +3,7 @@ import { createServerFn } from '@tanstack/react-start';
 // Fetches a fresh motivational study quote from OpenRouter.
 // Runs server-side only so the API key never reaches the browser.
 export const getAIQuote = createServerFn({ method: 'GET' }).handler(async () => {
-  const apiKey = process.env.OPENROUTER_API_KEY;
+  const apiKey = process.env['OPENROUTER_API_KEY'];
   if (!apiKey) return { quote: null };
 
   try {
