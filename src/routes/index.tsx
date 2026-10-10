@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { FocusTimer } from '@/components/FocusTimer';
 import { dayKey, seedTasks, streakCount, downloadCSV, subjects, priorities, type Task, type Subject, type Priority } from '@/lib/planner';
+import { getAIQuote } from '@/lib/quote.functions';
 import landscape from '@/assets/study-landscape.jpg';
 
 export const Route = createFileRoute('/')({
