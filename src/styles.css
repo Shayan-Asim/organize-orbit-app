@@ -197,3 +197,6 @@ button, input,select,textarea {font:inherit;}
 @media(max-width:380px){.brand>span:last-child{font-size:16px;}.sidebar{padding:0 12px;}.main-content{padding-left:13px;padding-right:13px;}.right-panels{grid-template-columns:1fr;}.timer-ring{width:165px;height:165px;}.timer-number{font-size:37px;}.creation-time{display:none;}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;}}
 @media print{.sidebar,.main-shell,.toast-message,.celebration{display:none!important;}.print-report{display:block;padding:25px;}.print-report h1{font-size:26px;}.print-report>div{border-bottom:1px solid var(--border);padding:15px 0;break-inside:avoid;}.print-report h3{font-size:15px;font-weight:600;}.print-report p{font-size:11px;margin-top:5px;}.planner-shell{background:var(--background);}}
+.mobile-theme {display:none;}
+.dark .banner-note {color:var(--foreground);}
+@media(max-width:700px){.mobile-theme {display:inline-flex;}}
