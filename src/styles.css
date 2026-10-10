@@ -204,3 +204,21 @@ button, input,select,textarea {font:inherit;}
 /* Small screens: keep the live date & time visible and the top nav opaque */
 @media(max-width:900px){.date-block{display:block;}}
 @media(max-width:700px){.sidebar{background:var(--background);backdrop-filter:blur(12px);}.welcome-row{grid-template-columns:1fr;}.date-block{text-align:left;display:flex;gap:10px;align-items:center;flex-wrap:wrap;}.date-block strong{margin-top:0;color:var(--foreground);}}
+
+/* ---- AI study assistant chat ---- */
+.chat-panel { display: flex; flex-direction: column; height: min(640px, calc(100vh - 260px)); min-height: 420px; padding: 0; overflow: hidden; }
+.chat-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; border-bottom: 1px solid var(--border); }
+.chat-identity { display: flex; align-items: center; gap: 12px; }
+.chat-identity strong { display: block; font-size: 15px; }
+.chat-identity span:not(.chat-avatar) { display: block; font-size: 12px; color: var(--muted-foreground); }
+.chat-avatar { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 12px; background: var(--primary); color: var(--primary-foreground); }
+.chat-messages { flex: 1; overflow-y: auto; padding: 18px; display: flex; flex-direction: column; gap: 12px; }
+.chat-bubble { max-width: 78%; padding: 11px 15px; border-radius: 16px; font-size: 14px; line-height: 1.55; white-space: pre-wrap; }
+.chat-bubble.user { align-self: flex-end; background: var(--primary); color: var(--primary-foreground); border-bottom-right-radius: 4px; }
+.chat-bubble.assistant { align-self: flex-start; background: var(--muted); color: var(--foreground); border-bottom-left-radius: 4px; }
+.chat-bubble.typing { display: inline-flex; align-items: center; gap: 8px; color: var(--muted-foreground); }
+.chat-error { align-self: center; font-size: 13px; color: var(--destructive); background: color-mix(in oklch, var(--destructive) 10%, transparent); padding: 8px 14px; border-radius: 10px; }
+.chat-composer { display: flex; align-items: flex-end; gap: 10px; padding: 14px 18px; border-top: 1px solid var(--border); }
+.chat-composer textarea { flex: 1; resize: none; border: 1px solid var(--input); background: var(--background); color: var(--foreground); border-radius: 12px; padding: 11px 14px; font: inherit; font-size: 14px; line-height: 1.4; max-height: 120px; outline: none; }
+.chat-composer textarea:focus { border-color: var(--ring); box-shadow: 0 0 0 3px color-mix(in oklch, var(--ring) 25%, transparent); }
+@media (max-width: 700px) { .chat-bubble { max-width: 88%; } .chat-panel { height: calc(100vh - 220px); } }
